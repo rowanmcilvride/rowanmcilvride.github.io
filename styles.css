@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-header {
+  padding: 2rem 3rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  font-size: 0.9rem;
+}
+
+.nav-links .active {
+  border-bottom: 1px solid #111;
+}
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.intro,
+.content {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.work-item {
+  margin-bottom: 3rem;
+}
+
+.site-footer {
+  padding: 3rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #777;
+}
+
+/* subtle animation */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
