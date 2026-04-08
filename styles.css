@@ -1,85 +1,214 @@
+/* =========================
+   Base / Reset
+========================= */
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #111;
+font-family: "Jost", -apple-system, BlinkMacSystemFont,
+               "Helvetica Neue", Helvetica, Arial, sans-serif;  color: #111;
   background: #fff;
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+/* =========================
+   Header
+========================= */
+
 
 .site-header {
-  padding: 2rem 3rem;
-}
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
 
-.nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
 }
 
-.logo {
-  font-size: 1.2rem;
+
+
+.site-title {
+  font-size: 1.4rem;
   font-weight: 500;
+  justify-self: start;
 }
 
-.nav-links a {
-  margin-left: 2rem;
+
+/* =========================
+   Navigation
+========================= */
+
+
+.site-nav {
+  justify-self: center;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+
+
+.site-nav a {
+  text-decoration: none;
+  color: #111;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-nav .active {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* =========================
+   Page Layout
+========================= */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 3rem 0;
+}
+
+/* =========================
+   Work Groups
+========================= */
+
+.work-group {
+  margin-bottom: 4rem;
+}
+
+.work-group-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   Tile Grid
+========================= */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.work-tile {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-tile img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+/* =========================
+   Tile Typography
+========================= */
+
+.work-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.work-meta {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* =========================
+   Text Pages (About / Contact)
+========================= */
+
+.text-section {
+  max-width: 640px;
+}
+
+.text-section p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header,
+  .page {
+    padding: 1.5rem;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Social Links (Header Right)
+========================= */
+
+.site-social {
+  grid-column: 3;
+  justify-self: end;
+
+  display: flex;
+  gap: 1.2rem;
   font-size: 0.9rem;
 }
 
-.nav-links .active {
-  border-bottom: 1px solid #111;
+.site-social img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  opacity: 0.7;
 }
 
-.hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  padding: 0 3rem;
-}
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 400;
-}
+.site-social img:hover { opacity: 1; }
 
-.intro,
-.content {
-  max-width: 700px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-}
+/* =========================
+   Video stuff
+========================= */
 
-.work-item {
-  margin-bottom: 3rem;
-}
-
-.site-footer {
-  padding: 3rem;
-  font-size: 0.8rem;
-  text-align: center;
-  color: #777;
-}
-
-/* subtle animation */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.work-video {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.75rem;
+  background: #000;
 }
